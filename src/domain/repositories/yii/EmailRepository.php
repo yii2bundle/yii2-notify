@@ -3,6 +3,7 @@
 namespace yii2lab\notify\domain\repositories\yii;
 
 use Yii;
+use yii\base\InvalidArgumentException;
 use yii2lab\domain\Alias;
 use yii2lab\extension\arrayTools\repositories\base\BaseActiveArrayRepository;
 use yii2lab\extension\yii\helpers\FileHelper;
@@ -46,7 +47,12 @@ class EmailRepository extends BaseActiveArrayRepository implements EmailInterfac
 	
 	private function getFiles() {
 		$dir = Yii::getAlias(self::ALIAS);
-		return FileHelper::findFiles($dir);
+		try {
+		    $files = FileHelper::findFiles($dir);
+        } catch (InvalidArgumentException $e) {
+            $files = [];
+        }
+		return $files;
 	}
 	
 	private function mailerInstance() {
