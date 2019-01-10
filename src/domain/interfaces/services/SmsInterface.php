@@ -9,7 +9,25 @@ interface SmsInterface extends CrudInterface {
 	
 	public function sendEntity(SmsEntity $smsEntity);
 	public function directSendEntity(SmsEntity $smsEntity);
+	
+	/**
+	 * @param $address
+	 * @param $content
+	 *
+	 * @return mixed
+	 *
+	 * @deprecated
+	 */
 	public function send($address, $content);
+	
+	/**
+	 * @param $address
+	 * @param $content
+	 *
+	 * @return mixed
+	 *
+	 * @deprecated
+	 */
 	public function directSend($address, $content);
 	
 }
