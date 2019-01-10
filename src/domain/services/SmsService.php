@@ -58,12 +58,12 @@ class SmsService extends ActiveBaseService implements SmsInterface {
 	
 	private function validate(SmsEntity $smsEntity) {
 		$smsEntity->validate();
-		$key = 'SmsTimeLimit_' . $smsEntity->address;
+		/*$key = 'SmsTimeLimit_' . $smsEntity->address;
 		$isHas = Yii::$app->cache->get($key);
 		if($isHas) {
 			throw new SmsTimeLimitException;
 		}
-		Yii::$app->cache->set($key, TIMESTAMP, $this->timeLimit);
+		Yii::$app->cache->set($key, TIMESTAMP, $this->timeLimit);*/
 	}
 	
 	private function createJob(SmsEntity $smsEntity) {
