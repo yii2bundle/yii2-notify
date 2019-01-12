@@ -4,7 +4,7 @@
  * @var $entity yii2lab\domain\BaseEntity
  */
 use yii2lab\extension\yii\helpers\Html;
-use yii2module\markdown\widgets\Markdown;
+use yii2lab\extension\markdown\widgets\Markdown;
 
 ?>
 
