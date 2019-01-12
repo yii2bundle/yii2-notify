@@ -3,8 +3,8 @@
 namespace yii2lab\notify\domain\services;
 
 use yii2lab\domain\services\ActiveBaseService;
+use yii2lab\navigation\domain\widgets\Alert;
 use yii2lab\notify\domain\entities\FlashEntity;
-use yii2lab\notify\domain\widgets\Alert;
 
 /**
  * Class FlashService
