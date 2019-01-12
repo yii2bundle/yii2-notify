@@ -3,7 +3,7 @@
 namespace yii2lab\notify\domain\services;
 
 use Yii;
-use yii2lab\domain\services\ActiveBaseService;
+use yii2lab\domain\services\base\BaseActiveService;
 use yii2lab\notify\domain\entities\EmailEntity;
 use yii2lab\notify\domain\interfaces\services\EmailInterface;
 use yii2lab\notify\domain\job\EmailJob;
@@ -15,7 +15,7 @@ use yii2lab\notify\domain\job\EmailJob;
  *
  * @property \yii2lab\notify\domain\interfaces\repositories\EmailInterface $repository
  */
-class EmailService extends ActiveBaseService implements EmailInterface {
+class EmailService extends BaseActiveService implements EmailInterface {
 	
 	public $directOnly = false;
 	

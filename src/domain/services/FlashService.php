@@ -2,7 +2,7 @@
 
 namespace yii2lab\notify\domain\services;
 
-use yii2lab\domain\services\ActiveBaseService;
+use yii2lab\domain\services\base\BaseActiveService;
 use yii2lab\navigation\domain\widgets\Alert;
 use yii2lab\notify\domain\entities\FlashEntity;
 
@@ -12,7 +12,7 @@ use yii2lab\notify\domain\entities\FlashEntity;
  * @package yii2lab\notify\domain\services
  * @deprecated use yii2lab\navigation\domain\services\FlashService
  */
-class FlashService extends ActiveBaseService {
+class FlashService extends BaseActiveService {
 	
 	public function send($content, $type = Alert::TYPE_SUCCESS, $delay = FlashEntity::DELAY_DEFAULT) {
 		$entity = $this->repository->forgeEntity([

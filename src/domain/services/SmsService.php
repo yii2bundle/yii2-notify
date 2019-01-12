@@ -3,7 +3,7 @@
 namespace yii2lab\notify\domain\services;
 
 use Yii;
-use yii2lab\domain\services\ActiveBaseService;
+use yii2lab\domain\services\base\BaseActiveService;
 use yii2lab\extension\enum\enums\TimeEnum;
 use yii2lab\notify\domain\entities\SmsEntity;
 use yii2lab\notify\domain\exceptions\SmsTimeLimitException;
@@ -17,7 +17,7 @@ use yii2lab\notify\domain\job\SmsJob;
  *
  * @property \yii2lab\notify\domain\interfaces\repositories\SmsInterface $repository
  */
-class SmsService extends ActiveBaseService implements SmsInterface {
+class SmsService extends BaseActiveService implements SmsInterface {
 	
 	public $directOnly = false;
 	public $timeLimit = TimeEnum::SECOND_PER_MINUTE;

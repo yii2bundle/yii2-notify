@@ -2,7 +2,7 @@
 
 namespace yii2lab\notify\domain\services;
 
-use yii2lab\domain\services\ActiveBaseService;
+use yii2lab\domain\services\base\BaseActiveService;
 use yii2lab\notify\domain\entities\TestEntity;
 use yii2lab\notify\domain\interfaces\services\TestInterface;
 
@@ -13,7 +13,7 @@ use yii2lab\notify\domain\interfaces\services\TestInterface;
  *
  * @property \yii2lab\notify\domain\interfaces\repositories\TestInterface $repository
  */
-class TestService extends ActiveBaseService implements TestInterface {
+class TestService extends BaseActiveService implements TestInterface {
 	
 	public function send($type, $address, $subject, $message) {
 		$entity = new TestEntity();
