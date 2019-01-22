@@ -8,4 +8,6 @@ return [
 	'address' => 'Адрес',
 	'subject' => 'Тема',
 	'content' => 'Сообщение',
+
+    'messages_deleted' => 'Сообщения очищены!',
 ];

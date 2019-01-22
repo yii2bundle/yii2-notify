@@ -6,4 +6,6 @@ use yii2lab\domain\interfaces\repositories\CrudInterface;
 
 interface TestInterface extends CrudInterface {
 
+    public function truncate($type);
+
 }

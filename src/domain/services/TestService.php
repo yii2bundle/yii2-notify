@@ -23,5 +23,9 @@ class TestService extends BaseActiveService implements TestInterface {
 		$entity->message = $message;
 		$this->repository->insert($entity);
 	}
-	
+
+    public function truncate($type) {
+        $this->repository->truncate($type);
+    }
+
 }

@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $dataProvider \yii\data\BaseDataProvider */
 
 use yii\grid\GridView;
 use yii\helpers\Html;
@@ -33,3 +34,11 @@ $columns = [
 ]); ?>
 
 <?= Html::a(Yii::t('action', 'create'), $baseUrl . 'create', ['class' => 'btn btn-success']) ?>
+
+<?php
+if($dataProvider->count) {
+	echo Html::a(Yii::t('action', 'truncate'), $baseUrl . 'clean', [
+        'class' => 'btn btn-danger',
+        'data-method' => 'post'
+    ]);
+} ?>

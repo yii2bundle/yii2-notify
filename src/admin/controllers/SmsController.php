@@ -4,7 +4,9 @@ namespace yii2lab\notify\admin\controllers;
 
 use Yii;
 use yii2lab\domain\data\Query;
+use yii2lab\extension\web\helpers\Behavior;
 use yii2lab\notify\domain\entities\TestEntity;
+use yii2lab\notify\domain\enums\TypeEnum;
 
 class SmsController extends BaseController
 {
@@ -12,8 +14,17 @@ class SmsController extends BaseController
 	const RENDER_INDEX = '@yii2lab/notify/admin/views/sms/index';
 	
 	public $formClass = 'yii2lab\notify\admin\forms\SmsForm';
-	
-	public function actions() {
+
+	public function behaviors()
+    {
+        return [
+            Behavior::verb([
+                'clean' => ['POST'],
+            ]),
+        ];
+    }
+
+    public function actions() {
 		$actions = parent::actions();
 		$actions['index'] = [
 			'class' => self::ACTION_INDEX,
@@ -29,5 +40,11 @@ class SmsController extends BaseController
 		];
 		return $actions;
 	}
-	
+
+	public function actionClean() {
+        \App::$domain->notify->test->truncate(TypeEnum::SMS);
+	    \App::$domain->navigation->alert->create(\Yii::t('notify/main', 'messages_deleted'));
+	    return $this->redirect('/notify/sms');
+    }
+
 }
