@@ -55,7 +55,11 @@ class SmsService extends BaseActiveService implements SmsInterface {
 		$this->validate($smsEntity);
 		$this->repository->send($smsEntity);
 	}
-	
+
+    public function isDelivered($id, $phone) {
+        return $this->repository->isDelivered($id, $phone);
+    }
+
 	private function validate(SmsEntity $smsEntity) {
 		$smsEntity->validate();
 		/*$key = 'SmsTimeLimit_' . $smsEntity->address;

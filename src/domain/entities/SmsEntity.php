@@ -10,11 +10,13 @@ use yii2lab\domain\values\LangValue;
  *
  * @package yii2lab\notify\domain\entities
  *
+ * @property $id
  * @property string $address
  * @property string $content
  */
 class SmsEntity extends BaseEntity {
-	
+
+    protected $id;
 	protected $address;
 	protected $content;
 	
@@ -26,6 +28,7 @@ class SmsEntity extends BaseEntity {
 		return [
 			[['content'], 'trim'],
 			[['address', 'content'], 'required'],
+            [['id'], 'integer'],
 		];
 	}
 	
