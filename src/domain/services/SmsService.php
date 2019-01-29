@@ -71,8 +71,9 @@ class SmsService extends BaseActiveService implements SmsInterface {
 	}
 	
 	private function createJob(SmsEntity $smsEntity) {
-		$job = Yii::createObject(SmsJob::class);
-		Yii::configure($job, $smsEntity->toArray());
+		$job = new SmsJob;
+        $job->address = $smsEntity->address;
+        $job->content = $smsEntity->content;
 		$jobId = Yii::$app->queue->push($job);
 		return $jobId;
 	}
