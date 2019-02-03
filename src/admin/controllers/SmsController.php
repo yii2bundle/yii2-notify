@@ -3,8 +3,8 @@
 namespace yii2lab\notify\admin\controllers;
 
 use Yii;
-use yii2lab\domain\data\Query;
-use yii2lab\extension\web\helpers\Behavior;
+use yii2rails\domain\data\Query;
+use yii2rails\extension\web\helpers\Behavior;
 use yii2lab\notify\domain\entities\TestEntity;
 use yii2lab\notify\domain\enums\TypeEnum;
 

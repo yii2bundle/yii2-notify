@@ -2,7 +2,7 @@
 
 namespace yii2lab\notify\domain\services;
 
-use yii2lab\domain\services\base\BaseActiveService;
+use yii2rails\domain\services\base\BaseActiveService;
 use yii2lab\notify\domain\entities\TestEntity;
 use yii2lab\notify\domain\interfaces\services\TestInterface;
 

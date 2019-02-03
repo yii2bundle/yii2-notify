@@ -4,9 +4,9 @@ namespace yii2lab\notify\domain\repositories\yii;
 
 use Yii;
 use yii\base\InvalidArgumentException;
-use yii2lab\domain\Alias;
-use yii2lab\extension\arrayTools\repositories\base\BaseActiveArrayRepository;
-use yii2lab\extension\yii\helpers\FileHelper;
+use yii2rails\domain\Alias;
+use yii2rails\extension\arrayTools\repositories\base\BaseActiveArrayRepository;
+use yii2rails\extension\yii\helpers\FileHelper;
 use yii2lab\notify\domain\entities\EmailEntity;
 use yii2lab\notify\domain\helpers\EmlParserHelper;
 use yii2lab\notify\domain\interfaces\repositories\EmailInterface;

@@ -2,7 +2,7 @@
 
 namespace yii2lab\notify\domain;
 
-use yii2lab\domain\enums\Driver;
+use yii2rails\domain\enums\Driver;
 
 /**
  * Class Domain
@@ -13,7 +13,7 @@ use yii2lab\domain\enums\Driver;
  * @property-read \yii2lab\notify\domain\interfaces\services\TestInterface $test
  * @property-read \yii2lab\notify\domain\interfaces\repositories\RepositoriesInterface $repositories
  */
-class Domain extends \yii2lab\domain\Domain {
+class Domain extends \yii2rails\domain\Domain {
 	
 	public function config() {
 		return [

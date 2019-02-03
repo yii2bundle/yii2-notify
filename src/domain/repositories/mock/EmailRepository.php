@@ -3,7 +3,7 @@
 namespace yii2lab\notify\domain\repositories\mock;
 
 use Yii;
-use yii2lab\domain\repositories\BaseRepository;
+use yii2rails\domain\repositories\BaseRepository;
 use yii2lab\notify\domain\entities\EmailEntity;
 use yii2lab\notify\domain\entities\TestEntity;
 use yii2lab\notify\domain\interfaces\repositories\EmailInterface;

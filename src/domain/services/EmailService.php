@@ -3,7 +3,7 @@
 namespace yii2lab\notify\domain\services;
 
 use Yii;
-use yii2lab\domain\services\base\BaseActiveService;
+use yii2rails\domain\services\base\BaseActiveService;
 use yii2lab\notify\domain\entities\EmailEntity;
 use yii2lab\notify\domain\interfaces\services\EmailInterface;
 use yii2lab\notify\domain\job\EmailJob;

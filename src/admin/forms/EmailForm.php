@@ -3,7 +3,7 @@
 namespace yii2lab\notify\admin\forms;
 
 use Yii;
-use yii2lab\domain\base\Model;
+use yii2rails\domain\base\Model;
 
 class EmailForm extends Model {
 	

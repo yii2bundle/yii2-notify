@@ -3,8 +3,8 @@
 namespace yii2lab\notify\domain\services;
 
 use Yii;
-use yii2lab\domain\services\base\BaseActiveService;
-use yii2lab\extension\enum\enums\TimeEnum;
+use yii2rails\domain\services\base\BaseActiveService;
+use yii2rails\extension\enum\enums\TimeEnum;
 use yii2lab\notify\domain\entities\SmsEntity;
 use yii2lab\notify\domain\exceptions\SmsTimeLimitException;
 use yii2lab\notify\domain\interfaces\services\SmsInterface;

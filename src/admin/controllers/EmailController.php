@@ -2,7 +2,7 @@
 
 namespace yii2lab\notify\admin\controllers;
 
-use yii2lab\domain\data\Query;
+use yii2rails\domain\data\Query;
 use yii2lab\notify\domain\entities\TestEntity;
 
 class EmailController extends BaseController

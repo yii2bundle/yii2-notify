@@ -2,7 +2,7 @@
 
 namespace yii2lab\notify\admin\controllers;
 
-use yii2lab\domain\web\ActiveController as Controller;
+use yii2rails\domain\web\ActiveController as Controller;
 
 class BaseController extends Controller
 {

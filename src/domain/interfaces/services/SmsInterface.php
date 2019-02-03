@@ -2,8 +2,8 @@
 
 namespace yii2lab\notify\domain\interfaces\services;
 
-use yii2lab\domain\interfaces\services\CrudInterface;
-use yii2lab\domain\values\TimeValue;
+use yii2rails\domain\interfaces\services\CrudInterface;
+use yii2rails\domain\values\TimeValue;
 use yii2lab\notify\domain\entities\SmsEntity;
 
 interface SmsInterface extends CrudInterface {

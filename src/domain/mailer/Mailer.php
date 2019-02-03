@@ -2,7 +2,7 @@
 
 namespace yii2lab\notify\domain\mailer;
 
-use yii2lab\app\domain\helpers\EnvService;
+use yii2rails\app\domain\helpers\EnvService;
 
 class Mailer extends \yii\swiftmailer\Mailer {
 	

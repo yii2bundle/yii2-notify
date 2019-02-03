@@ -2,7 +2,7 @@
 
 namespace yii2lab\notify\domain\interfaces\repositories;
 
-use yii2lab\domain\values\TimeValue;
+use yii2rails\domain\values\TimeValue;
 use yii2lab\notify\domain\entities\SmsEntity;
 
 interface SmsInterface {

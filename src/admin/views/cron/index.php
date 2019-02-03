@@ -7,7 +7,7 @@ use yii\data\ArrayDataProvider;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 use yii\queue\JobInterface;
-use yii2lab\extension\yii\helpers\Html;
+use yii2rails\extension\yii\helpers\Html;
 
 $this->title = Yii::t('notify/cron', 'title');
 $columns = [

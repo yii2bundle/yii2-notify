@@ -2,8 +2,8 @@
 
 namespace yii2lab\notify\domain\entities;
 
-use yii2lab\domain\BaseEntity;
-use yii2lab\domain\values\TimeValue;
+use yii2rails\domain\BaseEntity;
+use yii2rails\domain\values\TimeValue;
 
 /**
  * Class TestEntity

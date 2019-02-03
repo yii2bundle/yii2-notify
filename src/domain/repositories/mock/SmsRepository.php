@@ -4,8 +4,8 @@ namespace yii2lab\notify\domain\repositories\mock;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use yii2lab\domain\repositories\BaseRepository;
-use yii2lab\domain\values\TimeValue;
+use yii2rails\domain\repositories\BaseRepository;
+use yii2rails\domain\values\TimeValue;
 use yii2lab\notify\domain\entities\SmsEntity;
 use yii2lab\notify\domain\entities\TestEntity;
 use yii2lab\notify\domain\interfaces\repositories\SmsInterface;

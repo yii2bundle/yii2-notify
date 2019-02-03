@@ -2,9 +2,9 @@
 
 namespace yii2lab\notify\admin\helpers;
 
-use yii2lab\domain\data\Query;
-use yii2lab\domain\interfaces\repositories\ReadInterface;
-use yii2lab\extension\menu\interfaces\MenuInterface;
+use yii2rails\domain\data\Query;
+use yii2rails\domain\interfaces\repositories\ReadInterface;
+use yii2rails\extension\menu\interfaces\MenuInterface;
 use yii2lab\notify\domain\entities\TestEntity;
 use yii2lab\notify\domain\enums\NotifyPermissionEnum;
 use yii2lab\notify\domain\helpers\JobHelper;
