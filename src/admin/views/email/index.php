@@ -4,10 +4,11 @@
 
 use yii\grid\GridView;
 use yii\helpers\Html;
+use yii2rails\extension\web\helpers\ControllerHelper;
 
 $this->title = Yii::t('notify/main', 'email');
 
-$baseUrl = $this->context->getBaseUrl();
+$baseUrl = ControllerHelper::getUrl();
 
 $columns = [
 	[
