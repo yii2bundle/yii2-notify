@@ -23,8 +23,10 @@ class EmailRepository extends BaseActiveArrayRepository implements EmailInterfac
 	
 	public function send(EmailEntity $message) {
 		$mailer = $this->mailerInstance()->compose();
-		if(!empty($this->email)) {
-			$mailer->setFrom($this->email);
+		if($message->from != null) {
+            $mailer->setFrom($message->from);
+        } elseif(!empty($this->email)) {
+            $mailer->setFrom($this->email);
 		}
 		$mailer->setTo($message->address);
 		$mailer->setSubject($message->subject);
