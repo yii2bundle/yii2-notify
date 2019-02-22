@@ -22,7 +22,7 @@ class EmailRepository extends BaseActiveArrayRepository implements EmailInterfac
 	private $_mailerInstance;
 	
 	public function send(EmailEntity $message) {
-		$mailer = $this->mailerInstance()->compose();
+		$mailer = Yii::$app->mailer->compose();
 		if($message->from != null) {
             $mailer->setFrom($message->from);
         } elseif(!empty($this->email)) {
@@ -59,7 +59,7 @@ class EmailRepository extends BaseActiveArrayRepository implements EmailInterfac
 	
 	private function mailerInstance() {
 		if(! $this->_mailerInstance instanceof yii\mail\MailerInterface) {
-			$this->_mailerInstance = Yii::createObject('yii2lab\notify\domain\mailer\Mailer');
+			$this->_mailerInstance = Yii::createObject('yii2bundle\notify\domain\mailer\Mailer');
 		}
 		return $this->_mailerInstance;
 	}
