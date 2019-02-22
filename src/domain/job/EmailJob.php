@@ -8,7 +8,8 @@ use yii\queue\JobInterface;
 use yii2lab\notify\domain\entities\EmailEntity;
 
 class EmailJob extends BaseObject implements JobInterface {
-	
+
+    public $from;
 	public $address;
 	public $subject;
 	public $content;
@@ -16,6 +17,7 @@ class EmailJob extends BaseObject implements JobInterface {
 	
 	public function execute($queue) {
 		$email = new EmailEntity();
+        $email->from = $this->from;
 		$email->address = $this->address;
 		$email->subject = $this->subject;
 		$email->content = $this->content;
