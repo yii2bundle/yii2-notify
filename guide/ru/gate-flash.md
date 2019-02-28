@@ -10,5 +10,5 @@ Flash
 Отправка Flash-сообщения
 
 ```php
-Yii::$app->notify->flash->send('текст сообщения', Alert::TYPE_WARNING);
+App::$domain->notify->flash->send('текст сообщения', Alert::TYPE_WARNING);
 ```
