@@ -11,7 +11,7 @@ class TestRepository extends BaseActiveDiscRepository implements TestInterface {
 	public $table = 'notify_test';
 	public $path = '@common/runtime/data';
 
-    public function truncate($type) {
+    public function truncateData($type) {
         $query = Query::forge();
         $query->andWhere(['type' => $type]);
         $collection = $this->all();

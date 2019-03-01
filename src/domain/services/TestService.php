@@ -25,7 +25,7 @@ class TestService extends BaseActiveService implements TestInterface {
 	}
 
     public function truncate($type) {
-        $this->repository->truncate($type);
+        $this->repository->truncateData($type);
     }
 
 }
