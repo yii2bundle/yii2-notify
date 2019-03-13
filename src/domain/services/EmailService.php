@@ -32,7 +32,16 @@ class EmailService extends BaseActiveService implements EmailInterface {
 		$emailEntity->validate();
 		$this->repository->send($emailEntity);
 	}
-	
+
+    /**
+     * @param $address
+     * @param $subject
+     * @param $content
+     * @return mixed|null
+     * @throws \yii2rails\domain\exceptions\UnprocessableEntityHttpException
+     *
+     * @deprecated
+     */
 	public function send($address, $subject, $content) {
 		if($this->directOnly) {
 			$this->directSend($address, $subject, $content);
@@ -45,7 +54,15 @@ class EmailService extends BaseActiveService implements EmailInterface {
 		$emailEntity->validate();
 		$this->createJob($emailEntity);
 	}
-	
+
+    /**
+     * @param $address
+     * @param $subject
+     * @param $content
+     * @return mixed|void
+     *
+     * @deprecated
+     */
 	public function directSend($address, $subject, $content) {
 		$emailEntity = new EmailEntity();
 		$emailEntity->address = $address;
