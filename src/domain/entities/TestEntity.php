@@ -3,6 +3,7 @@
 namespace yii2lab\notify\domain\entities;
 
 use yii2rails\domain\BaseEntity;
+use yii2rails\domain\behaviors\entity\TimeValueFilter;
 use yii2rails\domain\values\TimeValue;
 
 /**
@@ -27,11 +28,14 @@ class TestEntity extends BaseEntity {
 	protected $subject;
 	protected $message;
 	protected $created_at;
-	
-	public function init() {
-		parent::init();
-		$this->created_at = new TimeValue;
-	}
+
+    public function behaviors() {
+        return [
+            [
+                'class' => TimeValueFilter::class,
+            ],
+        ];
+    }
 	
 	public function fieldType() {
 		return [
