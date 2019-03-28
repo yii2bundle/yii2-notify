@@ -26,10 +26,12 @@ class NotifyTestHelper
 {
 
     public static function cleanSms() {
+        AuthTestHelper::authByLogin('admin');
         $requestEntity = new RequestEntity;
         $requestEntity->method = HttpMethodEnum::DELETE;
         $requestEntity->uri = 'v1/notify-test';
         $responseEntity = RestTestHelper::sendRequest($requestEntity);
+        AuthTestHelper::loadPrevAuth();
     }
 
     public static function getActivationCodeByPhone($phone) {
