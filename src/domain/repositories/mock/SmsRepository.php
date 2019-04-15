@@ -17,8 +17,7 @@ class SmsRepository extends BaseRepository implements SmsInterface {
 	}
 
     public function isDelivered($id, $phone) {
-        $timeValue = new TimeValue();
-        $timeValue->set(TIMESTAMP);
+        $timeValue = new TimeValue(time());
         return $timeValue;
     }
 }
