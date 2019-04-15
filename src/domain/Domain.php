@@ -3,6 +3,7 @@
 namespace yii2lab\notify\domain;
 
 use yii2rails\domain\enums\Driver;
+use yii2rails\app\domain\enums\YiiEnvEnum;
 
 /**
  * Class Domain
@@ -20,7 +21,7 @@ class Domain extends \yii2rails\domain\Domain {
 			'repositories' => [
 				'transport',
 				'email' => Driver::YII,
-				'sms' => Driver::MOCK,
+				'sms' => YII_ENV === YiiEnvEnum::PROD ? 'smsc' : Driver::MOCK,
 				'flash' => Driver::SESSION,
 				'test' => Driver::FILEDB,
 			],
