@@ -13,6 +13,7 @@ use yii2rails\domain\values\LangValue;
  * @property string $from
  * @property string $address
  * @property string $copyToAdress
+ * @property string $blindCopyToAddress
  * @property string $subject
  * @property string $content
  * @property AttachmentEntity[] $attachments
@@ -22,6 +23,7 @@ class EmailEntity extends BaseEntity {
     protected $from;
 	protected $address;
     protected $copyToAdress;
+    protected $blindCopyToAddress;
 	protected $subject;
 	protected $content;
 	protected $attachments;

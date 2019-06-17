@@ -34,6 +34,9 @@ class EmailRepository extends BaseActiveArrayRepository implements EmailInterfac
         if (!empty($message->copyToAdress)) {
             $mailer->setCc($message->copyToAdress);
         }
+        if (!empty($message->blindCopyToAddress)) {
+            $mailer->setBcc($message->blindCopyToAddress);
+        }
         $mailer->setSubject($message->subject);
         $mailer->setTextBody($message->content);
         $mailer->setHtmlBody($message->content);
