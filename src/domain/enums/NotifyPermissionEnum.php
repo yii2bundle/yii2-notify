@@ -10,4 +10,7 @@ class NotifyPermissionEnum extends BaseEnum
     // Управление уведомлениями
     const MANAGE = 'oNotifyManage';
 
+    // Отправка SMS
+    const SMS_SEND = 'oNotifySmsSend';
+
 }
