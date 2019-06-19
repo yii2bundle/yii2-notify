@@ -8,6 +8,7 @@ use yii2lab\notify\domain\entities\SmsEntity;
 use yii2lab\notify\domain\enums\NotifyPermissionEnum;
 use yii2lab\notify\domain\enums\TypeEnum;
 use yii2lab\rest\domain\rest\Controller;
+use yii2rails\extension\web\enums\HttpHeaderEnum;
 use yii2rails\extension\web\helpers\Behavior;
 
 class SmsController extends Controller
@@ -36,10 +37,11 @@ class SmsController extends Controller
         $data = Yii::$app->request->post();
         $smsEntity = new SmsEntity($data);
         if(!empty($data['is_direct_send'])) {
-            \App::$domain->notify->sms->directSendEntity($smsEntity);
+            $smsQeueEntity = \App::$domain->notify->sms->directSendEntity($smsEntity);
         } else {
-            \App::$domain->notify->sms->sendEntity($smsEntity);
+            $smsQeueEntity = \App::$domain->notify->sms->sendEntity($smsEntity);
         }
+        Yii::$app->response->headers->add(HttpHeaderEnum::X_ENTITY_ID, $smsQeueEntity->id);
     }
 
 }
