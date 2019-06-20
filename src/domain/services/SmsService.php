@@ -31,16 +31,17 @@ class SmsService extends BaseActiveService implements SmsInterface {
 		}
 		$this->validate($smsEntity);
         $smsQeueEntity = $this->createQueue($smsEntity);
-		$this->createJob($smsEntity);
+        $smsEntity->id = $smsQeueEntity->id;
+		$this->pushJob($smsEntity);
         return $smsQeueEntity;
 	}
 
 	public function directSendEntity(SmsEntity $smsEntity) : SmsQueueEntity {
 		$this->validate($smsEntity);
         $smsQeueEntity = $this->createQueue($smsEntity);
+        $smsEntity->id = $smsQeueEntity->id;
 		$this->repository->send($smsEntity);
-        $smsQeueEntity->status = SmsStatusEnum::DELIVERED;
-        \App::$domain->notify->smsQueue->update($smsQeueEntity);
+		\App::$domain->notify->smsQueue->updateStatus($smsQeueEntity->id, SmsStatusEnum::SENDED);
 		return $smsQeueEntity;
 	}
 	
@@ -86,9 +87,15 @@ class SmsService extends BaseActiveService implements SmsInterface {
 	}
 
     private function createJob(SmsEntity $smsEntity) {
-		$job = new SmsJob;
+        $job = new SmsJob;
+        $job->queue_id = $smsEntity->id;
         $job->address = $smsEntity->address;
         $job->content = $smsEntity->content;
+        return $job;
+    }
+
+    private function pushJob(SmsEntity $smsEntity) {
+		$job = $this->createJob($smsEntity);
 		$jobId = Yii::$app->queue->push($job);
 		return $jobId;
 	}

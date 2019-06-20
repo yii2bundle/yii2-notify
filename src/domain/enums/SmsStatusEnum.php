@@ -10,6 +10,7 @@ class SmsStatusEnum extends BaseEnum
     const DISABLE = 0;
     const NEW = 100;
     const SENDED = 200;
-    const DELIVERED = 300;
+    const ERROR = 300;
+    const DELIVERED = 400;
 
 }
