@@ -17,6 +17,7 @@ use yii2rails\domain\values\LangValue;
  * @property string $subject
  * @property string $content
  * @property AttachmentEntity[] $attachments
+ * @property string $forwardAddress
  */
 class EmailEntity extends BaseEntity {
 
@@ -27,6 +28,7 @@ class EmailEntity extends BaseEntity {
 	protected $subject;
 	protected $content;
 	protected $attachments;
+	protected $forwardAddress;
 	
 	/**
 	 * @inheritdoc
