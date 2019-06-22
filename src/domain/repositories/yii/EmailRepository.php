@@ -38,10 +38,8 @@ class EmailRepository extends BaseActiveArrayRepository implements EmailInterfac
             $mailer->setBcc($message->blindCopyToAddress);
         }
         if (!empty($message->forwardAddress)) {
-            //TODO: дополнить нужными заголовками при редиректе сообщения
-            //X-Forwarded-To: tester.yuwert@yandex.kz
-            //X-Forwarded-For: nikiformalkov@gmail.com tester.yuwert@yandex.kz
-            $mailer->setHeader('Х-Forwarded-For', $message->forwardAddress);
+            $mailer->setHeader('Х-Forwarded-To', $message->forwardAddress);
+            $mailer->addHeader('Х-Forwarded-For', $message->address . ' ' . $message->forwardAddress);
         }
 
         $mailer->setSubject($message->subject);
