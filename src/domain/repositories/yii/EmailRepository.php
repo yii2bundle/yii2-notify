@@ -39,7 +39,7 @@ class EmailRepository extends BaseActiveArrayRepository implements EmailInterfac
         }
         if (!empty($message->forwardAddress)) {
             $mailer->setHeader('Х-Forwarded-To', $message->forwardAddress);
-            $mailer->addHeader('Х-Forwarded-For', $message->address . ' ' . $message->forwardAddress);
+            //$mailer->addHeader('Х-Forwarded-For', $message->address . ' ' . $message->forwardAddress);
         }
 
         $mailer->setSubject($message->subject);
