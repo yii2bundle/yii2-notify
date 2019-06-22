@@ -15,5 +15,7 @@ use yii2rails\domain\interfaces\services\CrudInterface;
 interface SmsQueueInterface extends CrudInterface {
 
     public function checkAllStatus();
+    public function updateAllStatus($ids, $status);
+    public function updateStatus($id, $status);
 
 }

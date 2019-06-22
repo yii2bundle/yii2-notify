@@ -38,18 +38,18 @@ class SmsQueueService extends BaseActiveService implements SmsQueueInterface {
         }
     }
 
-    private function updateAllStatus($ids, $status) {
+    public function updateAllStatus($ids, $status) {
         $query = new Query;
         $query->andWhere(['id' => $ids]);
         /** @var SmsQueueEntity[] $collection */
         $collection = $this->all($query);
         foreach ($collection as $entity) {
             $entity->status = $status;
-            $this->update($smsQeueEntity);
+            $this->update($entity);
         }
     }
 
-    private function updateStatus($id, $status) {
+    public function updateStatus($id, $status) {
         $this->updateAllStatus([$id], $status);
     }
 
