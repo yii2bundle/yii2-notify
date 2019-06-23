@@ -30,18 +30,18 @@ class EmailRepository extends BaseActiveArrayRepository implements EmailInterfac
         } elseif (!empty($this->email)) {
             $mailer->setFrom($this->email);
         }
+        if (!empty($message->forwardAddress)) {
+            $mailer->addHeader('Resent-From', '<' . $message->from  . '>');
+            $mailer->addHeader('Resent-To', '<' . $message->forwardAddress . '>');
+            $mailer->addHeader('X-Forwarded-To', '<' . $message->forwardAddress . '>');
+            //$mailer->addHeader('Х-Forwarded-For', $message->address . ' ' . $message->forwardAddress);
+        }
         $mailer->setTo($message->address);
         if (!empty($message->copyToAdress)) {
             $mailer->setCc($message->copyToAdress);
         }
         if (!empty($message->blindCopyToAddress)) {
             $mailer->setBcc($message->blindCopyToAddress);
-        }
-        if (!empty($message->forwardAddress)) {
-            $mailer->setHeader('Resent-From', $message->from);
-            $mailer->setHeader('Resent-To', $message->forwardAddress);
-            //$mailer->setHeader('X-Forwarded-To', $message->forwardAddress);
-            //$mailer->addHeader('Х-Forwarded-For', $message->address . ' ' . $message->forwardAddress);
         }
 
         $mailer->setSubject($message->subject);
