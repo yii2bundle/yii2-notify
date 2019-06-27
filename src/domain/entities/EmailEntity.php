@@ -39,7 +39,6 @@ class EmailEntity extends BaseEntity {
 	{
 		return [
 			[['content', 'subject'], 'trim'],
-			[['content'], 'required'],
 			[['from'], 'email'],
 		];
 	}
