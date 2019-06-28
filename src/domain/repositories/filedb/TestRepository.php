@@ -20,5 +20,11 @@ class TestRepository extends BaseActiveDiscRepository implements TestInterface {
         }
         $this->setCollection($collection);
     }
-
+    
+    protected function getCollection() {
+	    $collection = parent::getCollection();
+	    $collection = array_reverse($collection);
+	    return $collection;
+    }
+	
 }
