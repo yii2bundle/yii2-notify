@@ -34,6 +34,7 @@ class SmsEntity extends BaseEntity {
 	
 	public function fieldType() {
 		return [
+            'id' => 'integer',
 			'content' => LangValue::class,
 		];
 	}
