@@ -1,0 +1,16 @@
+[
+	{
+		"type": "sms",
+		"address": "77991000006",
+		"subject": null,
+		"message": "Код подтверждения: 202649",
+		"created_at": null
+	},
+	{
+		"type": "sms",
+		"address": "77991000007",
+		"subject": null,
+		"message": "Код подтверждения: 643257",
+		"created_at": null
+	}
+]

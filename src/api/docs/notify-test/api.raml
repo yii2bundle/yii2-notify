@@ -1,0 +1,18 @@
+description: "Уведомления для тестировщиков"
+get:
+    securedBy: [Auth]
+    queryParameters:
+        type:
+            description: "Тип уведомления (sms, email)"
+            type: string
+    description: "Получить список уведомлений"
+    is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/all.raml
+    responses:
+        200:
+            body:
+                application/json:
+                    example: !include example/all-response-body.json
+delete:
+    securedBy: [Auth]
+    description: "Очистить уведомления"
+    is: !include /../../../vendor/yii2bundle/yii2-rest/src/domain/docs/is/delete.raml
