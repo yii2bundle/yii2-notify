@@ -55,7 +55,7 @@ class NotifyTestHelper
         if(empty($collection)) {
             throw new NotFoundHttpException('Sms not found');
         }
-        $smsEntity = new TestEntity(ArrayHelper::last($collection));
+        $smsEntity = new TestEntity(ArrayHelper::first($collection));
         AuthTestHelper::loadPrevAuth();
         return $smsEntity;
     }
