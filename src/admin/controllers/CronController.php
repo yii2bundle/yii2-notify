@@ -7,7 +7,7 @@ use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii2rails\extension\web\helpers\Behavior;
 use yii2lab\notify\domain\helpers\JobHelper;
-use yii2lab\navigation\domain\widgets\Alert;
+use yii2bundle\navigation\domain\widgets\Alert;
 
 class CronController extends Controller
 {

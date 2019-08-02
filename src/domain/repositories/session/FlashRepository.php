@@ -5,14 +5,14 @@ namespace yii2lab\notify\domain\repositories\session;
 use yii2rails\extension\common\helpers\ReflectionHelper;
 use yii2rails\domain\repositories\BaseRepository;
 use Yii;
-use yii2lab\navigation\domain\widgets\Alert;
+use yii2bundle\navigation\domain\widgets\Alert;
 use yii2lab\notify\domain\entities\FlashEntity;
 
 /**
  * Class FlashRepository
  *
  * @package yii2lab\notify\domain\repositories\session
- * @deprecated use yii2lab\navigation\domain\repositories\session\FlashRepository
+ * @deprecated use yii2bundle\navigation\domain\repositories\session\FlashRepository
  */
 class FlashRepository extends BaseRepository {
 	

@@ -3,7 +3,7 @@
 namespace yii2lab\notify\domain\entities;
 
 use yii2rails\domain\BaseEntity;
-use yii2module\lang\domain\helpers\LangHelper;
+use yii2bundle\lang\domain\helpers\LangHelper;
 
 /**
  * Class MessageEntity

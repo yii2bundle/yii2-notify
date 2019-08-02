@@ -3,14 +3,14 @@
 namespace yii2lab\notify\domain\services;
 
 use yii2rails\domain\services\base\BaseActiveService;
-use yii2lab\navigation\domain\widgets\Alert;
+use yii2bundle\navigation\domain\widgets\Alert;
 use yii2lab\notify\domain\entities\FlashEntity;
 
 /**
  * Class FlashService
  *
  * @package yii2lab\notify\domain\services
- * @deprecated use yii2lab\navigation\domain\services\FlashService
+ * @deprecated use yii2bundle\navigation\domain\services\FlashService
  */
 class FlashService extends BaseActiveService {
 	

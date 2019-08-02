@@ -20,7 +20,7 @@ return [
 	'modules' => [
 		// ...
 		'notify' => [
-			'class' => 'yii2lab\notify\admin\Module',
+			'class' => 'yii2bundle\notify\admin\Module',
 			'as access' => Config::genAccess(PermissionEnum::NOTIFY_MANAGE),
 		],
 		// ...
@@ -36,7 +36,7 @@ return [
 		// ...
 		'notify' => [
 			'class' => 'yii2rails\domain\Domain',
-			'path' => 'yii2lab\notify\domain',
+			'path' => 'yii2bundle\notify\domain',
 			'repositories' => [
 				'transport',
 				'email' => Driver::MOCK,
