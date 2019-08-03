@@ -19,7 +19,7 @@ use yii2mod\helpers\ArrayHelper;
 use yii2rails\app\domain\helpers\Config;
 use yii2rails\app\domain\helpers\Env;
 use yii2rails\extension\yii\helpers\FileHelper;
-use yii2module\account\domain\v3\helpers\test\AuthTestHelper;
+use yii2bundle\account\domain\v3\helpers\test\AuthTestHelper;
 
 class NotifyTestHelper
 {
