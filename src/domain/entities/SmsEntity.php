@@ -13,12 +13,14 @@ use yii2rails\domain\values\LangValue;
  * @property $id
  * @property string $address
  * @property string $content
+ * @property integer $format
  */
 class SmsEntity extends BaseEntity {
 
     protected $id;
 	protected $address;
 	protected $content;
+	protected $format;
 	
 	/**
 	 * @inheritdoc
@@ -28,7 +30,7 @@ class SmsEntity extends BaseEntity {
 		return [
 			[['content'], 'trim'],
 			[['address', 'content'], 'required'],
-            [['id'], 'integer'],
+            [['id', 'format'], 'integer'],
 		];
 	}
 	

@@ -18,6 +18,7 @@ use yii2rails\domain\behaviors\entity\TimeValueFilter;
  * @property $status
  * @property $updated_at
  * @property $created_at
+ * @property $format
  */
 class SmsQueueEntity extends BaseEntity {
 
@@ -27,6 +28,7 @@ class SmsQueueEntity extends BaseEntity {
 	protected $status = SmsStatusEnum::NEW;
 	protected $updated_at;
 	protected $created_at;
+	protected $format;
 
     public function behaviors()
     {
@@ -42,6 +44,7 @@ class SmsQueueEntity extends BaseEntity {
         return [
             [['phone','content', 'status'], 'required'],
             ['status', 'in', 'range' => SmsStatusEnum::values()],
+            [['format'], 'integer'],
         ];
     }
 }

@@ -13,12 +13,14 @@ class SmsJob extends BaseObject implements JobInterface {
 	public $queue_id;
 	public $address;
 	public $content;
-	
+	public $format;
+
 	public function execute($queue) {
         $smsEntity = new SmsEntity;
         $smsEntity->id = $this->queue_id;
         $smsEntity->address = $this->address;
         $smsEntity->content = $this->content;
+        $smsEntity->format = $this->format;
         App::$domain->notify->repositories->sms->send($smsEntity);
         App::$domain->notify->smsQueue->updateStatus($this->queue_id, SmsStatusEnum::SENDED);
 	}

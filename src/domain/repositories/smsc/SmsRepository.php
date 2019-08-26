@@ -24,7 +24,7 @@ class SmsRepository extends BaseRepository implements SmsInterface {
     }
 
     public function send(SmsEntity $message) {
-        $this->smscTransfer->send($message->address, $message->content, 0, 0, $message->id);
+        $this->smscTransfer->send($message->address, $message->content, 0, 0, $message->id, $message->format);
 	}
 
 	public function isDelivered($id, $phone) {

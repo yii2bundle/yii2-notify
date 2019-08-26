@@ -49,6 +49,7 @@ class SmsService extends BaseActiveService implements SmsInterface {
         $smsEntity = new SmsEntity;
         $smsEntity->address = $address;
         $smsEntity->content = $content;
+        $smsEntity->format = $format;
 	    if($this->directOnly) {
 			$this->directSendEntity($smsEntity);
 			return null;
@@ -71,6 +72,7 @@ class SmsService extends BaseActiveService implements SmsInterface {
         $smsQeueEntity = new SmsQueueEntity;
         $smsQeueEntity->phone = $smsEntity->address;
         $smsQeueEntity->content = $smsEntity->content;
+        $smsQeueEntity->format = $smsEntity->format;
         \App::$domain->notify->repositories->smsQueue->insert($smsQeueEntity);
         return $smsQeueEntity;
     }
@@ -91,6 +93,7 @@ class SmsService extends BaseActiveService implements SmsInterface {
         $job->queue_id = $smsEntity->id;
         $job->address = $smsEntity->address;
         $job->content = $smsEntity->content;
+        $job->format = $smsEntity->format;
         return $job;
     }
 
