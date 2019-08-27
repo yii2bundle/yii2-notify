@@ -5,6 +5,7 @@ namespace yii2lab\notify\domain\services;
 use Yii;
 use yii2lab\notify\domain\entities\SmsQueueEntity;
 use yii2lab\notify\domain\enums\SmsStatusEnum;
+use yii2lab\notify\domain\enums\TypeEnum;
 use yii2rails\domain\services\base\BaseActiveService;
 use yii2rails\extension\enum\enums\TimeEnum;
 use yii2lab\notify\domain\entities\SmsEntity;
@@ -45,7 +46,7 @@ class SmsService extends BaseActiveService implements SmsInterface {
 		return $smsQeueEntity;
 	}
 	
-	public function send($address, $content) {
+	public function send($address, $content, $format = TypeEnum::SMSC_FORMAT_SMS) {
         $smsEntity = new SmsEntity;
         $smsEntity->address = $address;
         $smsEntity->content = $content;
