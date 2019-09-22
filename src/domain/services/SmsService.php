@@ -6,6 +6,7 @@ use Yii;
 use yii2lab\notify\domain\entities\SmsQueueEntity;
 use yii2lab\notify\domain\enums\SmsStatusEnum;
 use yii2lab\notify\domain\enums\TypeEnum;
+use yii2rails\app\domain\helpers\EnvService;
 use yii2rails\domain\services\base\BaseActiveService;
 use yii2rails\extension\enum\enums\TimeEnum;
 use yii2lab\notify\domain\entities\SmsEntity;
@@ -22,7 +23,7 @@ use yii2lab\notify\domain\job\SmsJob;
  */
 class SmsService extends BaseActiveService implements SmsInterface {
 	
-	public $directOnly = false;
+	public $directOnly = true;
 	public $timeLimit = TimeEnum::SECOND_PER_MINUTE;
 	
 	public function sendEntity(SmsEntity $smsEntity) : SmsQueueEntity {

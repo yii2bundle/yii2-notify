@@ -4,6 +4,7 @@ namespace yii2lab\notify\domain\helpers;
 
 use yii\helpers\ArrayHelper;
 use yii2rails\app\domain\enums\YiiEnvEnum;
+use yii2rails\app\domain\helpers\EnvService;
 use yii2rails\domain\enums\Driver;
 
 class SmscTransfer
@@ -39,6 +40,8 @@ class SmscTransfer
      */
     function send($phones, $message, $translit = 0, $time = 0, $id = 0, $format = 0, $sender = false, $query = "", $files = array())
     {
+        //TODO: обдумать как правильно и выпилить
+        $sender = EnvService::getServer('smsc.sender', false);
         static $formats = array(1 => "flash=1", "push=1", "hlr=1", "bin=1", "bin=2", "ping=1", "mms=1", "mail=1", "call=1", "viber=1");
 
         $m = $this->sendCmd("send", "cost=3&phones=" . urlencode($phones) . "&mes=" . urlencode($message) .
