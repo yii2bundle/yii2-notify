@@ -12,7 +12,7 @@ class m190826_142436_add_format_column_to_sms_queue_table extends Migration
      */
     public function safeUp()
     {
-        $this->addColumn('notify.sms_queue', 'format', $this->integer());
+        $this->addColumn('notify_sms_queue', 'format', $this->integer());
     }
 
     /**
@@ -20,6 +20,6 @@ class m190826_142436_add_format_column_to_sms_queue_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropColumn('notify.sms_queue', 'format');
+        $this->dropColumn('notify_sms_queue', 'format');
     }
 }
